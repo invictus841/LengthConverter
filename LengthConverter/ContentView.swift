@@ -52,6 +52,7 @@ struct ContentView: View {
             convertedResult = conversionToMeter * 0.00062
         }
         
+        
         return convertedResult
     }
     
@@ -83,7 +84,7 @@ struct ContentView: View {
                 }//: SECTION 2
                 
                 Section {
-                    TextField("Length", value: $lengthToConvert, format: .number)
+                    TextField("Length", value:$lengthToConvert, format: .number)
                         .keyboardType(.decimalPad)
                         .focused($lengthIsFocused)
                 } header: {
@@ -92,7 +93,7 @@ struct ContentView: View {
                 
                 Section {
                     // DISPLAY RESULT
-                    Text(convertedLength.formatted())
+                    Text(convertedLength.formatted() + " " + chosenUnit)
                 } header: {
                     Text("CONVERTED RESULT:")
                 } //: SECTION 4
